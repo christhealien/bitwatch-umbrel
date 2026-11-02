@@ -9,7 +9,7 @@ services:
 
   web:
     # zapomatic/bitwatch with Gotify alerts and the blake2b look, built by GitHub Actions (amd64 + arm64)
-    image: ghcr.io/christhealien/blake2b-bitwatch:1.0.0
+    image: ghcr.io/christhealien/blake2b-bitwatch:1.0.1
     user: "1000:1000"
     init: true
     restart: on-failure

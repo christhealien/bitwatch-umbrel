@@ -168,6 +168,14 @@ if s.count(anchor) != 1:
     sys.exit(f"FATAL {p}: save-button anchor found {s.count(anchor)} times")
 wr(p, s.replace(anchor, GOTIFY_UI + anchor))
 
+# ---- new installs start empty: upstream's example collections include Satoshi's genesis address, whose huge history
+# makes a self-hosted Electrs/Mempool time out (504) and drop the websocket
+import json
+p = "server/db.sample.json"
+d = json.loads(rd(p))
+d["collections"] = {}
+wr(p, json.dumps(d, indent=2) + "\n")
+
 # ---- look: monochrome. Literal colours first (JS + CSS), then the theme stylesheet loaded last.
 COLOURS = [
     (r"rgba\(77,\s*244,\s*255,", "rgba(255, 255, 255,"),
