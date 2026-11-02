@@ -1,0 +1,69 @@
+/* blake2b look (added by bitwatch-umbrel): black, white and greys, status colours only for good / warning / failure */
+:root {
+  --theme-primary: #f4f4f4;
+  --theme-secondary: #bdbdbd;
+  --theme-accent: #e0e0e0;
+  --theme-warning: #f0b429;
+  --theme-danger: #ff6b6b;
+  --theme-success: #3dd68c;
+  --theme-background: #000000;
+  --theme-surface: #0c0c0c;
+  --theme-text: #f4f4f4;
+  --theme-glow-primary: transparent;
+  --theme-glow-secondary: transparent;
+  --theme-glow-success: transparent;
+  --crystal-gradient: linear-gradient(#141414, #141414);
+  --b2b-line: #3a3a3a;
+  --b2b-line-hi: #f4f4f4;
+}
+html, body { background: #000 !important; color: #f4f4f4; }
+body { font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+code, .MuiTableCell-root, .crystal-input { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+.crystal-panel, .MuiPaper-root, .MuiDialog-paper {
+  background: #0c0c0c !important;
+  border: 1px solid var(--b2b-line) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.crystal-panel::before, .crystal-panel::after { display: none !important; }
+.MuiAppBar-root { background: #000 !important; border-bottom: 1px solid var(--b2b-line) !important; backdrop-filter: none !important; }
+footer { background: #000 !important; border-top: 1px solid var(--b2b-line) !important; backdrop-filter: none !important; }
+
+* { text-shadow: none !important; }
+.crystal-input, input, select, textarea {
+  background: #000 !important; color: #f4f4f4 !important;
+  border: 1px solid var(--b2b-line) !important; border-radius: 10px !important;
+}
+.crystal-input:focus, input:focus, select:focus, textarea:focus { outline: none; border-color: var(--b2b-line-hi) !important; box-shadow: none !important; }
+
+.crystal-button, .MuiButton-root { border-radius: 10px !important; box-shadow: none !important; text-transform: none !important; }
+.crystal-button { background: #000 !important; color: #f4f4f4 !important; border: 1px solid var(--b2b-line) !important; }
+.crystal-button:hover { border-color: var(--b2b-line-hi) !important; background: #1a1a1a !important; }
+.crystal-button-primary { background: #f4f4f4 !important; color: #000 !important; border-color: #f4f4f4 !important; }
+.crystal-button-primary:hover { background: #ffffff !important; color: #000 !important; }
+.crystal-button:disabled, .MuiButton-root.Mui-disabled { opacity: .45; }
+
+.crystal-icon-button { background: #000 !important; border: 1px solid var(--b2b-line) !important; box-shadow: none !important; }
+.crystal-icon-button:hover { background: #1a1a1a !important; border-color: var(--b2b-line-hi) !important; box-shadow: none !important; }
+
+.crystal-link, a { color: #f4f4f4; text-decoration-color: #808080; }
+.crystal-link:hover, a:hover { color: #fff; }
+
+.MuiTableCell-root { border-color: #1f1f1f !important; }
+.MuiTableRow-root:hover { background: #111 !important; }
+.MuiSwitch-track { background: #1a1a1a !important; border: 1px solid #3a3a3a; opacity: 1 !important; }
+.MuiSwitch-thumb { background: #8c8c8c !important; box-shadow: none !important; }
+.Mui-checked + .MuiSwitch-track { background: #f4f4f4 !important; border-color: #f4f4f4; }
+.Mui-checked .MuiSwitch-thumb { background: #000 !important; }
+
+/* Gotify block on the Integrations page */
+.b2b-gotify-note { color: #8c8c8c; font-size: .85rem; line-height: 1.45; margin: 0; }
+.b2b-gotify-note code { color: #e0e0e0; background: #141414; padding: 1px 6px; border-radius: 6px; }
+.b2b-divider { border: 0; border-top: 1px solid var(--b2b-line); margin: 24px 0; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; background: #000; }
+::-webkit-scrollbar-thumb { background: #2a2a2a !important; border-radius: 10px; border: 2px solid #000; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a !important; }
+* { scrollbar-color: #2a2a2a #000; }

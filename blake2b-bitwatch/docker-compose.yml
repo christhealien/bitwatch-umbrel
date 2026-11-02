@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<service-name>_1
+      APP_HOST: blake2b-bitwatch_web_1
+      APP_PORT: 3117
+
+  web:
+    # zapomatic/bitwatch with Gotify alerts and the blake2b look, built by GitHub Actions (amd64 + arm64)
+    image: ghcr.io/christhealien/blake2b-bitwatch:1.0.0
+    user: "1000:1000"
+    init: true
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data:/app/server/data
+    environment:
+      NODE_ENV: production
+      # First start only: use the Mempool (blake2b) app on this Umbrel. Change it later under Configuration.
+      MEMPOOL_API: http://blake2b-mempool_web_1:8792
