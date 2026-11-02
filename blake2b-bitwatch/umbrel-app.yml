@@ -4,7 +4,7 @@ name: Bitwatch (blake2b)
 tagline: Watch your Bitcoin addresses and wallets, with alerts to Gotify
 icon: https://raw.githubusercontent.com/christhealien/bitwatch-umbrel/master/blake2b-bitwatch/icon.svg
 category: bitcoin
-version: "1.0.0"
+version: "1.0.1"
 port: 8794
 description: >-
   Bitwatch watches Bitcoin addresses, xpubs and descriptors, in the mempool and on-chain, and tells you when a
@@ -27,6 +27,10 @@ support: https://github.com/christhealien/bitwatch-umbrel/issues
 submitter: christhealien
 submission: https://github.com/christhealien/bitwatch-umbrel
 releaseNotes: |-
+  **1.0.1**
+
+  - New installs start with no example addresses. The examples included Satoshi's genesis address, whose huge history makes your own Mempool/Electrs time out and drops the live connection.
+
   **1.0.0: first release**
 
   - Bitwatch 1.8.0 with Gotify alerts (Integrations page: server address, application token, priority, tap-to-open link).
